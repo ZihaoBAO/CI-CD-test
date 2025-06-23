@@ -14,6 +14,10 @@ const repoUrl = 'https://github.com/ZihaoBAO/CI-CD-test.git';// this is the url 
 const repoName = path.basename(repoUrl, '.git');
 const fullPath = path.join(repoDir, repoName);
 
+app.get('/webhook', (req, res) => {
+  res.send('Webhook is up and running!');
+});
+
 app.post('/webhook', (req, res) => {
   try {
     if (!fs.existsSync(repoDir)) fs.mkdirSync(repoDir, { recursive: true });
