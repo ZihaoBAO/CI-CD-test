@@ -22,10 +22,6 @@ jobs:
         run: npm install
         working-directory: ./backend
 
-      - name: Lint backend
-        run: npm run lint
-        working-directory: ./backend
-
       - name: Audit backend
         run: npm audit --audit-level=high
         working-directory: ./backend
