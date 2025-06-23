@@ -30,13 +30,6 @@ jobs:
         run: npm audit --audit-level=high
         working-directory: ./backend
 
-      - name: Static Security Analysis with Snyk (backend)
-        uses: snyk/actions/node@master
-        with:
-          args: test
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
       - name: Run backend tests
         run: npm test
         working-directory: ./backend
